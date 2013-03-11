@@ -13,27 +13,29 @@ _ = require('underscore')
 
 
 
+###add underscore to skeleton - add express branch###
+
+downloadFolder = __dirname + '/public/'
+
 app.get('/', (req, res)->
 	###get the version request from the url params
 	foreach on all the app versions in settings (how to deal with multi app here would it just be a new route or wheres it all mounted?)
 	res.download the one in the list - 404 on not###
 	applicationVersion = req.params.v
 	if applicationVersion == undefined
-		debugger
-		res.download(__dirname + '/public/' + applications.default, (err) ->
+		res.download(downloadFolder + applications.default, (err) ->
 			console.log err)
-
-	anus = _.pairs(applications)
-	debugger
-	_.each(anus, (app)->
-		debugger
-		console.log "bet it doesnt even get here"
-		)
-	
-	res.download(__dirname + '/public/' + applicationVersion , (err) ->
-		if err
-			exec "sendEmailService \"Difficulty downloading windows service\"", (error, stdout, stderr) ->
-				res.send stdout)
+	else
+		pairsOfApplications = _.pairs(applications)
+		_.each(pairsOfApplications, (item)->
+			debugger
+			console.log "bet it doesnt even get here"
+			)
+		
+		res.download(downloadFolder + applicationVersion , (err) ->
+			if err
+				exec "sendEmailService \"Difficulty downloading windows service\"", (error, stdout, stderr) ->
+					res.send stdout)
 	)
 
 app.use(express.bodyParser());
