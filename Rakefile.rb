@@ -12,8 +12,6 @@ task :createPublicFolder do
 	end
 end
 
-
-
 task :runProgram do
   sh "node index.js"
 end
