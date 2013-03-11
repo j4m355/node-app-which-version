@@ -10,15 +10,19 @@ express = require('express')
 app = express()
 exec = require('child_process').exec
 
+
+
 app.get('/', (req, res)->
-	exec "sendEmailService \"#{req.connection.remoteAddress} has downloaded the service\"", (error, stdout, stderr) ->
-			console.log stdout	
-	res.download(__dirname + '/public/Node-App-Windows-Launcher.exe', (err) ->
+	###get the version request from the url params
+	foreach on all the app versions in settings (how to deal with multi app here would it just be a new route or wheres it all mounted?)
+	res.download the one in the list - 404 on not###
+	res.download(__dirname + '/public/' +, (err) ->
 		if err
 			exec "sendEmailService \"Difficulty downloading windows service\"", (error, stdout, stderr) ->
 				res.send stdout)
 	)
 
+app.use(express.bodyParser());
 app.use(express.static(__dirname + '/public'));
 
 app.listen(3400)

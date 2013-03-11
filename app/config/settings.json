@@ -1,8 +1,7 @@
 {
 	"node-app-windows-launcher" : {
-		"default" : "",
-		"version1" : "",
-		"version2" : "",
-		"version3" : ""
+		"default" : "Node-App-Windows-Launcher.exe",
+		"version1" : "Node-App-Windows-Launcher-version1.exe",
+		"version2" : "Node-App-Windows-Launcher-version2.exe"
 	}
 }
