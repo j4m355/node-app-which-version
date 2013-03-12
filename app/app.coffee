@@ -29,7 +29,7 @@ app.get('/', (req, res)->
 	else
 		pairsOfApplications = _.pairs(applications)
 		quit = false
-		_.every(pairsOfApplications, 1,  (item)->
+		pairsOfApplications.some(item)->
 			if item[0] == 'v' + applicationVersion
 				debugger
 				res.download(downloadFolder + item[1])
