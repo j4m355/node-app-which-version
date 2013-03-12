@@ -13,15 +13,19 @@ _ = require('underscore')
 
 
 
+
 ###add underscore to skeleton - add express branch###
 
 downloadFolder = __dirname + '/public/'
 
-app.get('/', (req, res)->
+app.get('/', (req, res)->	
 	###get the version request from the url params
 	foreach on all the app versions in settings (how to deal with multi app here would it just be a new route or wheres it all mounted?)
 	res.download the one in the list - 404 on not###
-	applicationVersion = req.params.v
+	debugger
+	applicationVersion = req.query.v
+	console.log "VERSION: " + applicationVersion
+
 	if applicationVersion == undefined
 		res.download(downloadFolder + applications.default, (err) ->
 			console.log err)
@@ -29,7 +33,8 @@ app.get('/', (req, res)->
 		pairsOfApplications = _.pairs(applications)
 		_.each(pairsOfApplications, (item)->
 			debugger
-			console.log "bet it doesnt even get here"
+			console.log item
+
 			)
 		
 		res.download(downloadFolder + applicationVersion , (err) ->
@@ -38,8 +43,9 @@ app.get('/', (req, res)->
 					res.send stdout)
 	)
 
-app.use(express.bodyParser());
+#app.use(express.bodyParser());
 app.use(express.static(__dirname + '/public'));
+
 
 app.listen(3400)
 console.log('Listening on port 3400')
