@@ -22,25 +22,22 @@ app.get('/', (req, res)->
 	###get the version request from the url params
 	foreach on all the app versions in settings (how to deal with multi app here would it just be a new route or wheres it all mounted?)
 	res.download the one in the list - 404 on not###
-	debugger
 	applicationVersion = req.query.v
-	console.log "VERSION: " + applicationVersion
-
 	if applicationVersion == undefined
 		res.download(downloadFolder + applications.default, (err) ->
 			console.log err)
 	else
 		pairsOfApplications = _.pairs(applications)
-		_.each(pairsOfApplications, (item)->
-			debugger
-			console.log item
-
+		quit = false
+		_.every(pairsOfApplications, 1,  (item)->
+			if item[0] == 'v' + applicationVersion
+				debugger
+				res.download(downloadFolder + item[1])
+				res.send(200)
+				quit = true
 			)
-		
-		res.download(downloadFolder + applicationVersion , (err) ->
-			if err
-				exec "sendEmailService \"Difficulty downloading windows service\"", (error, stdout, stderr) ->
-					res.send stdout)
+		debugger		
+		res.send(404)
 	)
 
 #app.use(express.bodyParser());
@@ -58,7 +55,6 @@ applications = {}
 
 ParseApplicationsFromSettings = ()->
 	applications = settings.get("node-app-windows-launcher")
-	debugger
 
 
 
