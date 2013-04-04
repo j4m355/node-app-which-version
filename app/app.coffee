@@ -13,31 +13,26 @@ _ = require('underscore')
 
 
 
-
-###add underscore to skeleton - add express branch###
-
 downloadFolder = __dirname + '/public/'
 
-app.get('/', (req, res)->	
+app.get('*', (req, res)->
 	###get the version request from the url params
 	foreach on all the app versions in settings (how to deal with multi app here would it just be a new route or wheres it all mounted?)
 	res.download the one in the list - 404 on not###
-	applicationVersion = req.query.v
+	applicationVersion = ParseVersionFromUrl(req.url)
+	console.log "req url: " + req.url
+	console.log "application version: " + applicationVersion
 	if applicationVersion == undefined
 		res.download(downloadFolder + applications.default, (err) ->
-			console.log err)
+			if err then console.log err)
 	else
-		pairsOfApplications = _.pairs(applications)
-		quit = false
-		pairsOfApplications.some(item)->
-			if item[0] == 'v' + applicationVersion
-				debugger
-				res.download(downloadFolder + item[1])
-				res.send(200)
-				quit = true
-			)
-		debugger		
-		res.send(404)
+		downloadFileName = returnCorrectVersionOfApp(applicationVersion)
+		console.log downloadFileName
+		if downloadFileName == undefined
+			res.send(404)
+		else
+			res.download(downloadFolder + downloadFileName, (err)->
+				if err then console.log err)
 	)
 
 #app.use(express.bodyParser());
@@ -56,6 +51,25 @@ applications = {}
 ParseApplicationsFromSettings = ()->
 	applications = settings.get("node-app-windows-launcher")
 
+ParseVersionFromUrl = (url)->
+	#checks for V and then number in url
+	regexPattern = /^[Vv]{1}\d+$/
+	lastSlash = url.lastIndexOf('/')
+	result = url.substring(lastSlash + 1)
+	if regexPattern.test(result)
+		return result
+	else
+		return undefined
 
+returnCorrectVersionOfApp = (version)->
+	pairs = _.pairs(applications)
+	file = undefined
+	_.each(pairs, (item)->
+		debugger
+		if item[0].toLowerCase() == version.toLowerCase()
+			file = item[1] 
+		)
+	debugger
+	return file
 
 ParseApplicationsFromSettings()
