@@ -6,28 +6,30 @@ git@github.com:j4m355/node-app-skeleton.git
 START APPLICATION NOW :
 ###
 
-express = require('express')
-app = express()
+flatiron = require('flatiron')
+app = flatiron.app
+app.use(flatiron.plugins.http)
 exec = require('child_process').exec
+
 downloadFunction = require('./functions/download')
 
-app.get('/applications', (req, res)->
+app.router.get('/applications', (req, res)->
 	res.send(downloadFunction.applicationNames(applications))
 	)
 
-app.post('/add', (req, res)->
+app.router.post('/add', (req, res)->
 	###
 	need a smart way to reload applications from settings.json
 	###
 	)
 
-app.get('*/versions', (req,res)->
+app.router.get('*/versions', (req,res)->
 	downloadFunction.returnVersions(req.url, applications, (versions)->
 		res.send(versions)
 		)
 	)
 
-app.get('*', (req, res)->
+app.router.get('*', (req, res)->
 	#first if is to stop any futher processing for the apps route above
 	if req.url == '/apps' then res.send(200)
 	requestedApplication = req.url
@@ -46,5 +48,5 @@ app.get('*', (req, res)->
 
 
 applications = settings.get("applications")
-app.listen(3400)
+app.start(3400)
 console.log('Listening on port 3400')
