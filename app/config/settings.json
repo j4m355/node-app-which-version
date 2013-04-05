@@ -1,4 +1,4 @@
-[ 
+{"applications" : [ 
 	{ 
 	 	"name" : "3cx",
 		"default" : "Y://3CX//3CXPhoneSystem10.exe",
@@ -6,8 +6,9 @@
 	},
     { 
  		"name" : "node-app-windows-launcher",
-		"default" : "Node-App-Windows-Launcher.exe",
-		"v1" : "Node-App-Windows-Launcher-version1.exe",
-		"v2" : "Node-App-Windows-Launcher-version2.exe"
+		"default" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher.exe",
+		"v1" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher-version1.exe",
+		"v2" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher-version2.exe"
 	}
 ]
+}
