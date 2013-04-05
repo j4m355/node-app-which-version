@@ -11,14 +11,9 @@ app = express()
 exec = require('child_process').exec
 _ = require('underscore')
 
-
-
 downloadFolder = __dirname + '/public/'
 
 app.get('*', (req, res)->
-	###get the version request from the url params
-	foreach on all the app versions in settings (how to deal with multi app here would it just be a new route or wheres it all mounted?)
-	res.download the one in the list - 404 on not###
 	applicationVersion = ParseVersionFromUrl(req.url)
 	console.log "req url: " + req.url
 	console.log "application version: " + applicationVersion
@@ -35,7 +30,6 @@ app.get('*', (req, res)->
 				if err then console.log err)
 	)
 
-#app.use(express.bodyParser());
 app.use(express.static(__dirname + '/public'));
 
 
