@@ -13,6 +13,52 @@
 						{ 
 		 					"name" : "avi-preview",
 							"026" : "Y://avi preview//avipreview_by_aj_026_alpha.zip"
+						},
+						{
+							"name" : "NextWindow-TouchScreen-Driver",
+							"1.4.27" : "Y://dell//drivers//R238339//NextWindow_TST_Mixed_1_4_27.exe"
+						},
+						{
+							"name" : "Afraid-Org-DNS-Updater",
+							"1.1" : "Y://dns//FreeDNSUpdateServiceInstaller-1.1.zip"
+						},
+						{
+							"name" : "Everest-Ultimate",
+							"460" : "Y://everest//everestultimate460.exe"
+						},
+						{
+							"name" : "File-Scavenger",
+							"FileScavenger" : "Y://file scavenger//f4fs301a.zip"
+						},
+						{
+							"name" : "Windows-Guitar-Tuner",
+							"GuitarTuner" : "Y://guitar tuner//GuitarTuner.zip"
+						},
+						{
+							"name" : "Image-USB",
+							"imageusb" : "Y://image usb//imageusb.zip"
+						},
+						{
+							"name" : "LSISO-Creator",
+							"LCISOCreator" : "Y://LCISOCreator//LCISOCreator.exe"
+						},
+						{
+							"name" : "Lightscribe",
+							"1" : "Y://lightscribe//LS_HSI.EXE",
+							"1.18.1.1" : "Y://lightscribe//LS_Update_1.18.1.1_.exe"
+						},
+						{
+							"name" : "Magic-Disc",
+							"105" : "Y://magic disc//setup_magicdisc105.exe",
+							"106" : "Y://magic disc//setup_magicdisc106.zip"
+						},
+						{
+							"name" : "mySQL-Workbench",
+							"5.2.45" : "Y://mySql//mysql-workbench-gpl-5.2.45-win32.msi"
+						},
+						{
+							"name" : "Orb-Media-Server",
+							"1084" : "Y://orb//Orb20SetupEN1084.exe"
 						}
 
 					]

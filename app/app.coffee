@@ -11,11 +11,20 @@ app = express()
 exec = require('child_process').exec
 downloadFunction = require('./functions/download')
 
-app.get('apps', (req, res)->
-	#send back a json list of just the app names so that dynamic routes can be created to a download page for each app
+app.get('/applications', (req, res)->
+	res.send(downloadFunction.applicationNames(applications))
+	)
+
+app.get('*/versions', (req,res)->
+	downloadFunction.returnVersions(req.url, applications, (result, cb)->
+		console.log err
+		res.send(result)
+		)
 	)
 
 app.get('*', (req, res)->
+	#first if is to stop any futher processing for the apps route above
+	if req.url == '/apps' then res.send(200)
 	requestedApplication = req.url
 	console.log "req url: " + req.url
 	if requestedApplication == "/"
@@ -23,7 +32,6 @@ app.get('*', (req, res)->
 		res.send(404)
 	else
 		downloadFileName = downloadFunction.returnCorrectVersionOfApp(requestedApplication, applications)
-		console.log downloadFileName
 		if downloadFileName == undefined
 			res.send(404)
 		else
