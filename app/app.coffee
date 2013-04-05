@@ -23,13 +23,13 @@ app.router.post('/add', (req, res)->
 	###
 	)
 
-app.router.get('*/versions', (req,res)->
+app.router.get(':appName/versions', (req,res)->
 	downloadFunction.returnVersions(req.url, applications, (versions)->
 		res.send(versions)
 		)
 	)
 
-app.router.get('*', (req, res)->
+app.router.get(':appName', (req, res)->
 	#first if is to stop any futher processing for the apps route above
 	if req.url == '/apps' then res.send(200)
 	requestedApplication = req.url
