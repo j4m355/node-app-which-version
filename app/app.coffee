@@ -9,9 +9,7 @@ START APPLICATION NOW :
 express = require('express')
 app = express()
 exec = require('child_process').exec
-_ = require('underscore')
-
-
+downloadFunction = require('./functions/download')
 
 app.get('*', (req, res)->
 	requestedApplication = req.url
@@ -20,7 +18,7 @@ app.get('*', (req, res)->
 		#this catches the mounted folder itself
 		res.send(404)
 	else
-		downloadFileName = returnCorrectVersionOfApp(requestedApplication)
+		downloadFileName = downloadFunction.returnCorrectVersionOfApp(requestedApplication, applications)
 		console.log downloadFileName
 		if downloadFileName == undefined
 			res.send(404)
@@ -29,38 +27,8 @@ app.get('*', (req, res)->
 				if err then console.log err)
 	)
 
-#app.use(express.bodyParser());
-app.use(express.static(__dirname + '/public'))
 
 
 app.listen(3400)
 console.log('Listening on port 3400')
-
-###
-Stuff
-###
 applications = settings.get("applications")
-
-returnCorrectVersionOfApp = (url)->
-	parsedUrl = splitArray(url)
-	if parsedUrl is undefined then return undefined
-	file = undefined
-	for app in applications
-		if app.name.toLowerCase() == parsedUrl[0].toLowerCase()
-			pairs = _.pairs(app)
-			_.each(pairs, (pair)->
-				if pair[0].toLowerCase() == parsedUrl[1].toLowerCase()
-					file = pair[1]
-					)
-	return file
-
-splitArray = (url) ->
-	urlArray = url.split('/')
-	urlArray.splice(0,1)
-	return urlArray	
-	
-
-
-
-
-
