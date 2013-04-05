@@ -14,9 +14,6 @@ _ = require('underscore')
 
 
 app.get('*', (req, res)->
-	###get the version request from the url params
-	foreach on all the app versions in settings (how to deal with multi app here would it just be a new route or wheres it all mounted?)
-	res.download the one in the list - 404 on not###
 	requestedApplication = req.url
 	console.log "req url: " + req.url
 	if requestedApplication == "/"
@@ -42,11 +39,7 @@ console.log('Listening on port 3400')
 ###
 Stuff
 ###
-applications = {}
-
-ParseApplicationsFromSettings = ()->
-	applications = settings.get("applications")
-
+applications = settings.get("applications")
 
 returnCorrectVersionOfApp = (url)->
 	parsedUrl = splitArray(url)
@@ -68,6 +61,6 @@ splitArray = (url) ->
 	
 
 
-ParseApplicationsFromSettings()
+
 
 
