@@ -39,7 +39,7 @@
 							"imageusb" : "Y://image usb//imageusb.zip"
 						},
 						{
-							"name" : "LSISO-Creator",
+							"name" : "LCISO-Creator",
 							"LCISOCreator" : "Y://LCISOCreator//LCISOCreator.exe"
 						},
 						{

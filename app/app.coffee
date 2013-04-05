@@ -16,9 +16,9 @@ app.get('/applications', (req, res)->
 	)
 
 app.get('*/versions', (req,res)->
-	downloadFunction.returnVersions(req.url, applications, (result, cb)->
-		console.log err
-		res.send(result)
+	downloadFunction.returnVersions(req.url, applications, (versions)->
+		console.log versions
+		res.send(versions)
 		)
 	)
 
