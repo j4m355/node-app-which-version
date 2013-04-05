@@ -22,7 +22,6 @@ returnVersions = (url, applications, cb)->
 		if application.name.toLowerCase() == appName.toLowerCase()
 			removedNameObject = _.omit(application, "name")
 			justVersions = _.keys(removedNameObject)
-			console.log justVersions
 			if justVersions is undefined then return []
 			cb(justVersions)
 			)

@@ -15,9 +15,14 @@ app.get('/applications', (req, res)->
 	res.send(downloadFunction.applicationNames(applications))
 	)
 
+app.post('/add', (req, res)->
+	###
+	need a smart way to reload applications from settings.json
+	###
+	)
+
 app.get('*/versions', (req,res)->
 	downloadFunction.returnVersions(req.url, applications, (versions)->
-		console.log versions
 		res.send(versions)
 		)
 	)
