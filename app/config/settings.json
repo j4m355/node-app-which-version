@@ -1,14 +1,19 @@
-{"applications" : [ 
-	{ 
-	 	"name" : "3cx",
-		"default" : "Y://3CX//3CXPhoneSystem10.exe",
-		"v10" : "Y://3CX//3CXPhoneSystem10.exe"
-	},
-    { 
- 		"name" : "node-app-windows-launcher",
-		"default" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher.exe",
-		"v1" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher-version1.exe",
-		"v2" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher-version2.exe"
-	}
-]
+{
+	"applications" : [ 
+						{ 
+		 					"name" : "3cx",
+							"v10" : "Y://3CX//3CXPhoneSystem10.exe"
+						},
+	    				{ 
+	 						"name" : "node-app-windows-launcher",
+							"default" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher.exe",
+							"v1" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher-version1.exe",
+							"v2" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher-version2.exe"
+						},
+						{ 
+		 					"name" : "avi-preview",
+							"026" : "Y://avi preview//avipreview_by_aj_026_alpha.zip"
+						}
+
+					]
 }
