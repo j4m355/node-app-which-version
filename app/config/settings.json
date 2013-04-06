@@ -177,23 +177,35 @@
 						},
 						{
 							"name" : "Ubuntu",
-							"12.04.1-Server-x86" : "Y:\ubuntu\ubuntu-12.04.1-server-i386.iso",
-							"12.10-desktop-x64" : "Y:\ubuntu\ubuntu-12.10-desktop-amd64.iso",
-							"12.10-Server-x64" : "Y:\ubuntu\ubuntu-12.10-server-amd64.iso",
-							"12.10-Server-x86" : "Y:\ubuntu\ubuntu-12.10-server-i386.iso"
+							"12.04.1-Server-x86" : "Y://ubuntu//ubuntu-12.04.1-server-i386.iso",
+							"12.10-desktop-x64" : "Y://ubuntu//ubuntu-12.10-desktop-amd64.iso",
+							"12.10-Server-x64" : "Y://ubuntu//ubuntu-12.10-server-amd64.iso",
+							"12.10-Server-x86" : "Y://ubuntu//ubuntu-12.10-server-i386.iso"
 						},
 						{
-							"name" : "",
-							"v1" : ""
+							"name" : "uTorrent",
+							"3.3.29082" : "Y://utorrent//3.3.29082.exe",
+							"1.8.5" : "Y://utorrent//utorrent_1.8.5.exe",
+							"3-Server-10.10-27079" : "Y://utorrent//utorrent-server-3.0-ubuntu-10.10-27079.tar.gz"
 						},
 						{
-							"name" : "",
-							"v1" : ""
+							"name" : "VLC",
+							"2.0.5" : "Y://vlc//vlc-2.0.5-win32.exe"
 						},
 						{
-							"name" : "",
-							"v1" : ""
+							"name" : "Watermark-Images",
+							"v1" : "Y://watermark//WatermarkImageSetup.exe"
 						}
+						,
+						{
+							"name" : "Xbox",
+							"EEPROM-Utility" : "Y://xbox//EEPROM Utility.zip"
+						}
+						,
+						{
+							"name" : "Sound-Recorder-Windows-XP",
+							"WinXP-SoundRecorder" : "Y://xp sound recorder//Sndrec32.exe"
+						}					
 
 
 					]
