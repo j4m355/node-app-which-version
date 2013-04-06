@@ -29,7 +29,7 @@ app.get('*/versions', (req,res)->
 
 app.get('*', (req, res)->
 	#first if is to stop any futher processing for the apps route above
-	if req.url == '/apps' then res.send(200)
+	if req.url == '/applications' then res.send(200)
 	requestedApplication = req.url
 	console.log "req url: " + req.url
 	if requestedApplication == "/"
