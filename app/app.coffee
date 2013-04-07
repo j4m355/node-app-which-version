@@ -10,22 +10,23 @@ express = require('express')
 app = express()
 exec = require('child_process').exec
 downloadFunction = require('./functions/download')
+applicationService = require('./services/applicationService')
+
+app.use(express.bodyParser())
 
 app.get('/applications', (req, res)->
-	res.send(downloadFunction.applicationNames(applications))
+	applicationService.Applications((result, cb)->
+		debugger
+		res.send(result)
+		)
 	)
 
 app.post('/add', (req, res)->
-	###
-	need a smart way to reload applications from settings.json
-	###
+	if req.body != undefined
+		applicationService.Add(req.body, (cb)->
+			res.send(cb))
 	)
 
-app.get('*/versions', (req,res)->
-	downloadFunction.returnVersions(req.url, applications, (versions)->
-		res.send(versions)
-		)
-	)
 
 app.get('*', (req, res)->
 	#first if is to stop any futher processing for the apps route above
@@ -43,6 +44,7 @@ app.get('*', (req, res)->
 			res.download(downloadFileName, (err)->
 				if err then console.log err)
 	)
+
 
 
 applications = settings.get("applications")

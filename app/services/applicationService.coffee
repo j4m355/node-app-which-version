@@ -1,12 +1,14 @@
 Database = require('../functions/database')
 Application = require(__dirname + '/../schemas/applicationSchema')
+_ = require("underscore")
 
 
 ###
 Public Services
 ###
 Applications = (cb)->
-    GetApplications((Applications)->
+    GetAll((Applications)->
+        debugger
         cb(Applications)        
         )
 exports.Applications = Applications
@@ -21,11 +23,25 @@ Versions = (applicationName, cb) ->
 exports.Versions = Versions
 
 Add = (applicationObj, cb) ->
-    Update(applicationObj, (res)->
-        cb(res)
+    console.log "adding"
+    GetSingle(applicationObj.name, (application)->
+        console.log "tried to get single"
+        debugger
+        if application.length == 0
+            console.log "trying to create a new record"
+            Create(applicationObj, (result)->
+                cb(result))
+        else
+            console.log "going to update a record"
+            _.each(applicationObj.versions, (app)->
+                application.versions.push(app)
+                )
+            Update(application, (result)->
+                cb(result)
+                )
         )
-exports.Add = Add
 
+exports.Add = Add
 
 
 
@@ -42,6 +58,7 @@ GetApplications
 GetAll = (cb)->
     application = new Application()
     Application.find().exec((err, result)->
+        debugger
         cb(result)
         )
 
@@ -52,6 +69,7 @@ GetSingle = (applicationName, cb)->
         )
 
 Create = (app, cb)->
+    debugger
     application = new Application()
     application.name  = app.name
     application.versions = app.versions
@@ -65,9 +83,11 @@ Create = (app, cb)->
 
 Update = (app, cb)->
     application = new Application()
-    application.update({name : app.name }, app, {upsert: true}, (err, numAffected, rawResponse)->
+    application.update({name : app.name }, app, (err, numAffected, rawResponse)->
         if err
             cb(err)
+        if numAffected == 0
+            cb(rawResponse)
         else
             cb(200)
             )
