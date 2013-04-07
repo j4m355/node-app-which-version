@@ -3,3 +3,4 @@ npm-debug.log
 workspace/
 simpleWebServer/
 public/
+_settings.json

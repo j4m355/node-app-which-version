@@ -1,4 +1,23 @@
 {
+	"database" : {
+		"host" : "",
+		"name" : ""
+		},
+	"email": {
+        "settings": {
+            "host": "",
+            "auth": {
+                "user": "",
+                "pass": ""
+            },
+            "debug": "true"
+        },
+        "emailContent": {
+            "from": "",
+            "subject": "Hello World",
+            "text": "dog faced boy"
+        }
+    },
 	"applications" : [ 
 						{ 
 		 					"name" : "3cx",
