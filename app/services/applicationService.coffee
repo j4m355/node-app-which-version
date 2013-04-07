@@ -9,18 +9,19 @@ Public Services
 Applications = (cb)->
     GetAll((Applications)->
         debugger
+        console.log Applications
         cb(Applications)        
         )
 exports.Applications = Applications
 
-Versions = (applicationName, cb) ->
+###Versions = (applicationName, cb) ->
     GetVersions(applicationName, (application)->
         if application.length is 0
             cb(404)
         else
             cb(application.versions)
             )
-exports.Versions = Versions
+exports.Versions = Versions###
 
 Add = (applicationObj, cb) ->
     console.log "adding"
