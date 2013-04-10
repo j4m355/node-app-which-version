@@ -49,5 +49,5 @@ app.get('*', (req, res)->
 
 
 applications = settings.get("applications")
-app.listen(3400)
-console.log('Listening on port 3400')
+app.listen(3402)
+console.log('Listening on port 3402')
