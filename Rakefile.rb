@@ -8,11 +8,11 @@ task :npm do
 end
 
 task :stopService do
-    sh "echo downfall | sudo -S service worker-kue stop"
+    sh "sudo -S service which-version-ws stop"
 end
 
 task :startService do
-    sh "echo downfall | sudo -S service worker-kue start"
+    sh "sudo -S service which-version-ws start"
 end
 
 task :runProgram do
