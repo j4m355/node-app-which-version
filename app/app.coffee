@@ -15,6 +15,7 @@ applicationService = require('./services/applicationService')
 app.use(express.bodyParser())
 
 app.get('/applications', (req, res)->
+	console.log "Gravy"
 	applicationService.Applications((result, cb)->
 		debugger
 		res.send(result)
