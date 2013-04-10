@@ -4,7 +4,7 @@ task :default => [:runProgram]
 
 
 task :npm do
-    sh "echo downfall | sudo -S npm install"
+    sh "sudo -S npm install"
 end
 
 task :stopService do
