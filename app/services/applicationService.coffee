@@ -44,6 +44,20 @@ Add = (applicationObj, cb) ->
 
 exports.Add = Add
 
+GetApplication = (url, cb)->
+    parsedUrl = splitArray(url)
+    if parsedUrl is undefined then cb(undefined)
+    file = undefined
+    GetSingle(parsedUrl[0], (res)->
+        if res.length is 0 then cb(undefined)
+        for app in res[0].versions
+            if app.versionName.toLowerCase() == parsedUrl[1].toLowerCase()
+                return cb(app.versionPath)
+        
+        ) 
+
+exports.GetApplication = GetApplication
+
 
 
 
@@ -92,3 +106,34 @@ Update = (app, cb)->
         else
             cb(200)
             )
+
+
+
+
+###
+private methods
+###
+
+splitArray = (url) ->
+    #check first char and last are slashes
+    unless endsWith(url, "/")
+        url = url + '/'
+    unless url.lastIndexOf("/", 0) == 0
+        url = "/" + url
+    urlArray = url.split('/')
+    urlArray.splice(0,1)
+    return urlArray
+    
+        
+
+applicationNames = (applications)->
+    appArray = []
+    _.each(applications, (app)->
+        appArray.push(app.name)
+        )
+    return appArray
+
+exports.applicationNames = applicationNames
+
+endsWith = (str, suffix) ->
+  str.indexOf(suffix, str.length - suffix.length) isnt -1
