@@ -14,15 +14,6 @@ Applications = (cb)->
         )
 exports.Applications = Applications
 
-###Versions = (applicationName, cb) ->
-    GetVersions(applicationName, (application)->
-        if application.length is 0
-            cb(404)
-        else
-            cb(application.versions)
-            )
-exports.Versions = Versions###
-
 Add = (applicationObj, cb) ->
     console.log "adding"
     GetSingle(applicationObj.name, (application)->
