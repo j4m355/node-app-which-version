@@ -10,7 +10,8 @@ Applications = (cb)->
     GetAll((Applications)->
         debugger
         console.log Applications
-        cb(Applications)        
+        cb(Applications)
+
         )
 exports.Applications = Applications
 

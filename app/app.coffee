@@ -9,13 +9,14 @@ START APPLICATION NOW :
 express = require('express')
 app = express()
 exec = require('child_process').exec
+Mailer = require('./functions/mailer')
 
 applicationService = require('./services/applicationService')
 
 app.use(express.bodyParser())
 
 app.get('/applications', (req, res)->
-	console.log "Gravy"
+	Mailer.SendMail(text : "Someones on the site", subject : "Oldsoftwarelibrary.com visitor", to : "e@mailjames.com")
 	applicationService.Applications((result, cb)->
 		debugger
 		res.send(result)
@@ -49,6 +50,7 @@ app.get('*', (req, res)->
 		res.send(404)
 	else
 		applicationService.GetApplication(requestedApplication, (result)->
+			Mailer.SendMail(text : "Someones has downloaded " + result, subject : "Oldsoftwarelibrary.com visitor", to : "e@mailjames.com")
 			debugger
 			if result == undefined
 				res.send(404)
