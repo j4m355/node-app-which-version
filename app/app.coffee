@@ -28,6 +28,10 @@ app.post('/add', (req, res)->
 			res.send(cb))
 	)
 
+app.get('/favicon.ico', (req, res)->
+	res.send(404)
+	)
+
 
 app.get('*', (req, res)->
 	#first if is to stop any futher processing for the apps route above
@@ -38,12 +42,13 @@ app.get('*', (req, res)->
 		#this catches the mounted folder itself
 		res.send(404)
 	else
-		downloadFileName = downloadFunction.returnCorrectVersionOfApp(requestedApplication, applications)
-		if downloadFileName == undefined
-			res.send(404)
-		else
-			res.download(downloadFileName, (err)->
+		applicationService.GetApplication(requestedApplication, (result)->
+			debugger
+			if result == undefined
+				res.send(404)
+			res.download(result, (err)->
 				if err then console.log err)
+			)
 	)
 
 
