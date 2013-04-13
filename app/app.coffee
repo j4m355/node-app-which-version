@@ -9,7 +9,7 @@ START APPLICATION NOW :
 express = require('express')
 app = express()
 exec = require('child_process').exec
-downloadFunction = require('./functions/download')
+
 applicationService = require('./services/applicationService')
 
 app.use(express.bodyParser())
