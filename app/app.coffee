@@ -28,6 +28,12 @@ app.post('/add', (req, res)->
 			res.send(cb))
 	)
 
+app.post('/update', (req, res)->
+	if req.body != undefined
+		applicationService.UpdateApplication(req.body, (cb)->
+			res.send(cb))
+	)
+
 app.get('/favicon.ico', (req, res)->
 	res.send(404)
 	)
