@@ -58,6 +58,13 @@ GetApplication = (url, cb)->
 
 exports.GetApplication = GetApplication
 
+UpdateApplication = (applicationObj, cb)->
+    Update(applicationObj, (res)->
+        cb(res)
+        )
+
+exports.Update = Update
+
 
 
 
