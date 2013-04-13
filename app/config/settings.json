@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {"applications" : [ 
 	{ 
 	 	"name" : "3cx",
@@ -11,4 +12,146 @@
 		"v2" : "W://node-app-windows-launcher//app//public//Node-App-Windows-Launcher-version2.exe"
 	}
 ]
+=======
+{
+	"database" : {
+		"host" : "",
+		"name" : ""
+		},
+	"email": {
+        "settings": {
+            "host": "",
+            "auth": {
+                "user": "",
+                "pass": ""
+            },
+            "debug": "true"
+        },
+        "emailContent": {
+            "from": "",
+            "subject": "Hello World",
+            "text": "dog faced boy"
+        }
+    },
+	"applications" : [ 	   			
+					
+						{
+							"name" : "phpMyAdmin",
+							"3.4.9" : "Y://phpMyAdmin-3.4.9-all-languages//3.4.9.zip"
+						},
+						{
+							"name" : "PowerShell-Glass",
+							"v1" : "Y://powershell glass//Psglass.exe"
+						},
+						{
+							"name" : "Epson",
+							"SX515w-x86" : "Y://printer//32bit printer driver.exe",
+							"SX515w-x64" : "Y://printer//epson driver.exe"
+						},
+						{
+							"name" : "Redis",
+							"2.6.8" : "Y://redis//redis-2.6.8.tar.gz",
+							"2.6.9" : "Y://redis//redis-2.6.9.tar.gz",
+							"2.6.10" : "Y://redis//redis-2.6.10.tar.gz"
+						},
+						{
+							"name" : "Advantig-VNC",
+							"2.0.9.7" : "Y://remote assistance//Advantig-OneClick-Setup.zip"
+						},
+						{
+							"name" : "Ruby-Windows",
+							"1.9.3-p362" : "Y://ruby//rubyinstaller-1.9.3-p362.exe"
+						},
+						{
+							"name" : "Windows-Auto-Shutdown",
+							"v1" : "Y://shutdown//autoexit.exe"
+						},
+						{
+							"name" : "SQL-Server-Express",
+							"2012-R2-x64-Full" : "Y://sql express//SQLEXPR_x64_ENU.exe",
+							"2012-R2-x64-ManagementStudio" : "Y://sql express//SQLManagementStudio_x64_ENU.exe"
+						},
+						{
+							"name" : "Sublime-Text-2",
+							"2.0.1-x64" : "Y://sublime//Sublime Text 2.0.1 x64 Setup.exe"
+						},
+						{
+							"name" : "Swiv-3d",
+							"v1" : "Y://swiv 3d//SWIV_3D.iso"
+						},
+						{
+							"name" : "Sync-PowerToy",
+							"v21-x64" : "Y://Sync Toy//SyncToySetupPackage_v21_x64.exe"
+						},
+						{
+							"name" : "TCP-Optimizer",
+							"2003" : "Y://tcp//TCPOptimizer.exe"
+						},
+						{
+							"name" : "Theme-Hospital",
+							"v1" : "Y://Theme Hospital//Theme Hospital.zip"
+						},
+						{
+							"name" : "Git-For-Windows",
+							"msysGit-1.7.8-preview20111206" : "Y://Git//msysGit-fullinstall-1.7.8-preview20111206.exe"
+						},
+						{
+							"name" : "Tortoise-Git",
+							"1.7.6.0-x64" : "Y://Tortoise Git//TortoiseGit-1.7.6.0-64bit.msi"
+						},
+						{
+							"name" : "Tortoise-SVN",
+							"1.7.2.22327-x64" : "Y://tortoise svn//TortoiseSVN-1.7.2.22327-x64-svn-1.7.2.msi",
+							"1.7.11.23600-x64" : "Y://tortoise svn//TortoiseSVN-1.7.11.23600-x64-svn-1.7.8.msi"
+						},
+						{
+							"name" : "Trinity-Rescue-Disc",
+							"3.3-334" : "Y://trinity rescue disc//trinity-rescue-kit.3.3-build-334.iso"
+						},
+						{
+							"name" : "TVersity",
+							"Pro-2.1" : "Y://tversity//TVersityProSetup_2_1.exe",
+							"Pro-2.2" : "Y://tversity//TVersityProSetup_2_2.exe",
+							"Pro-2.3" : "Y://tversity//TVersityProSetup_2_3.exe"
+						},
+						{
+							"name" : "Twonky",
+							"Free-7.1.2" : "Y://tversity//TVersityProSetup_2_3.exe",
+							"Special-Server-7.1.2" : "Y://twonky//twonky-i386-glibc-2.2.5-special-7.1.2.zip"
+						},
+						{
+							"name" : "Ubuntu",
+							"12.04.1-Server-x86" : "Y://ubuntu//ubuntu-12.04.1-server-i386.iso",
+							"12.10-desktop-x64" : "Y://ubuntu//ubuntu-12.10-desktop-amd64.iso",
+							"12.10-Server-x64" : "Y://ubuntu//ubuntu-12.10-server-amd64.iso",
+							"12.10-Server-x86" : "Y://ubuntu//ubuntu-12.10-server-i386.iso"
+						},
+						{
+							"name" : "uTorrent",
+							"3.3.29082" : "Y://utorrent//3.3.29082.exe",
+							"1.8.5" : "Y://utorrent//utorrent_1.8.5.exe",
+							"3-Server-10.10-27079" : "Y://utorrent//utorrent-server-3.0-ubuntu-10.10-27079.tar.gz"
+						},
+						{
+							"name" : "VLC",
+							"2.0.5" : "Y://vlc//vlc-2.0.5-win32.exe"
+						},
+						{
+							"name" : "Watermark-Images",
+							"v1" : "Y://watermark//WatermarkImageSetup.exe"
+						}
+						,
+						{
+							"name" : "Xbox",
+							"EEPROM-Utility" : "Y://xbox//EEPROM Utility.zip"
+						}
+						,
+						{
+							"name" : "Sound-Recorder-Windows-XP",
+							"WinXP-SoundRecorder" : "Y://xp sound recorder//Sndrec32.exe"
+						}					
+
+
+					]
+>>>>>>> mark4
 }

@@ -1,5 +1,5 @@
 {
-  "name": "node-app-skeleton",
+  "name": "node-app-which-version-ws",
   "version": "0.0.0",
   "description": "A useful headstart",
   "main": "index.js",
@@ -10,7 +10,9 @@
     "coffee-script": "~1.4.0",
     "nconf": "~0.6.7",
     "express" : "3.x",
-    "underscore" : "*"
+    "underscore" : "*",
+    "mongoose" : "*",
+    "password-hash" : "*"
   },
   "bin": {
     "placeholder": "./bin/placeholder"

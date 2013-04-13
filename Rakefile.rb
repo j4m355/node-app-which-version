@@ -1,15 +1,18 @@
-task :install => [:npm, :createPublicFolder]
+task :install => [:npm]
+task :build => [:stopService, :npm, :startService]
 task :default => [:runProgram]
 
 
 task :npm do
-    sh "npm install"
+    sh "sudo -S npm install"
 end
 
-task :createPublicFolder do
-	Dir.chdir("app") do
-		Dir::mkdir("public")
-	end
+task :stopService do
+    sh "sudo -S service which-version-ws stop"
+end
+
+task :startService do
+    sh "sudo -S service which-version-ws start"
 end
 
 task :runProgram do
