@@ -12,7 +12,8 @@
     "express" : "3.x",
     "underscore" : "*",
     "mongoose" : "*",
-    "password-hash" : "*"
+    "password-hash" : "*",
+    "nodemailer" : "*"
   },
   "bin": {
     "placeholder": "./bin/placeholder"
